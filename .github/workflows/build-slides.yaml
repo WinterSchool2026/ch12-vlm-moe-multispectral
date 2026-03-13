@@ -1,0 +1,34 @@
+name: Build Marp Slides
+
+on:
+    push:
+        paths:
+            - CHALLENGE_SLIDES.md
+    workflow_dispatch:
+
+jobs:
+    build-slides:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+
+            - name: Install Marp CLI
+              run: npm install -g @marp-team/marp-cli
+
+            - name: Generate HTML slides
+              run: marp CHALLENGE_SLIDES.md --html --output CHALLENGE_SLIDES.html
+
+            - name: Commit generated HTML
+              run: |
+                  git config --global user.name "github-actions"
+                  git config --global user.email "github-actions@github.com"
+                  git add CHALLENGE_SLIDES.html
+                  git commit -m "Auto-generate slides HTML" || echo "No changes"
+                  git push

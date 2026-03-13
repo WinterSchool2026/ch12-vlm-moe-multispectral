@@ -6,6 +6,9 @@ on:
             - CHALLENGE_SLIDES.md
     workflow_dispatch:
 
+permissions:
+    contents: write
+
 jobs:
     build-slides:
         runs-on: ubuntu-latest
@@ -13,6 +16,9 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  persist-credentials: true
 
             - name: Setup Node
               uses: actions/setup-node@v4
@@ -30,5 +36,9 @@ jobs:
                   git config --global user.name "github-actions"
                   git config --global user.email "github-actions@github.com"
                   git add CHALLENGE_SLIDES.html
-                  git commit -m "Auto-generate slides HTML" || echo "No changes"
+                  if git diff --cached --quiet; then
+                    echo "No changes"
+                    exit 0
+                  fi
+                  git commit -m "Auto-generate slides HTML"
                   git push

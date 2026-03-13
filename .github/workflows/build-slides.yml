@@ -28,14 +28,14 @@ jobs:
       - name: Install Marp CLI
         run: npm install -g @marp-team/marp-cli
 
-      - name: Generate HTML slides
+      - name: Generate PDF slides
         run: marp CHALLENGE_SLIDES.md --pdf --output CHALLENGE_SLIDES.pdf
 
-      - name: Commit generated HTML
+      - name: Commit generated PDF
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add CHALLENGE_SLIDES.html
+          git add CHALLENGE_SLIDES.pdf
           if git diff --cached --quiet; then
             echo "No changes"
             exit 0

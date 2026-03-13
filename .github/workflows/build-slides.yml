@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - CHALLENGE_SLIDES.md
+      - assets/**
+      - .github/workflows/build-slides.yml
   workflow_dispatch:
 
 permissions:
@@ -29,7 +31,7 @@ jobs:
         run: npm install -g @marp-team/marp-cli
 
       - name: Generate PDF slides
-        run: marp CHALLENGE_SLIDES.md --pdf --output CHALLENGE_SLIDES.pdf
+        run: marp CHALLENGE_SLIDES.md --html --allow-local-files --pdf --output CHALLENGE_SLIDES.pdf
 
       - name: Commit generated PDF
         run: |
@@ -40,5 +42,5 @@ jobs:
             echo "No changes"
             exit 0
           fi
-          git commit -m "Auto-generate slides HTML"
+          git commit -m "Auto-generate slides PDF"
           git push

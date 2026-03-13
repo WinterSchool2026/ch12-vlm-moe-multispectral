@@ -1,44 +1,44 @@
 name: Build Marp Slides
 
 on:
-    push:
-        paths:
-            - CHALLENGE_SLIDES.md
-    workflow_dispatch:
+  push:
+    paths:
+      - CHALLENGE_SLIDES.md
+  workflow_dispatch:
 
 permissions:
-    contents: write
+  contents: write
 
 jobs:
-    build-slides:
-        runs-on: ubuntu-latest
+  build-slides:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  persist-credentials: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-            - name: Install Marp CLI
-              run: npm install -g @marp-team/marp-cli
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
 
-            - name: Generate HTML slides
-              run: marp CHALLENGE_SLIDES.md --html --output CHALLENGE_SLIDES.html
+      - name: Generate HTML slides
+        run: marp CHALLENGE_SLIDES.md --pdf --output CHALLENGE_SLIDES.pdf
 
-            - name: Commit generated HTML
-              run: |
-                  git config --global user.name "github-actions"
-                  git config --global user.email "github-actions@github.com"
-                  git add CHALLENGE_SLIDES.html
-                  if git diff --cached --quiet; then
-                    echo "No changes"
-                    exit 0
-                  fi
-                  git commit -m "Auto-generate slides HTML"
-                  git push
+      - name: Commit generated HTML
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add CHALLENGE_SLIDES.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Auto-generate slides HTML"
+          git push

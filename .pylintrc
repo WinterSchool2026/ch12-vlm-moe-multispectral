@@ -1,0 +1,31 @@
+[MASTER]
+init-hook='import sys; sys.path.append(".")'
+disable=
+    C0114, # missing-module-docstring
+    C0115, # missing-class-docstring
+    C0116, # missing-function-docstring
+    R0913, # too-many-arguments
+    R0903, # too-few-public-methods
+    R0914, # too-many-locals,
+    R0801, # duplicate-code,
+    R0902, # too-many-instance-attributes
+    W0212, # access-protected-member
+    C0209, # consider-using-f-string
+    W0702, # bare-except
+    C0103, # invalid-name
+    E0611, # no-name-in-module
+    W0102, # dangerous-default-value
+    E1130, # invalid-unary-operand-type
+    R1705, # no-else-return
+    E1121, # too-many-function-args
+    W0602, # global-variable-not-assigned
+    W0108, # lambda-might-not-be-necessary
+    E0633, # unpacking-non-sequence
+    R1732, # consider-using-with
+    R1728, # consider-using-generator
+    W0621, # redefined-outer-name
+ignored-modules=
+    tensorflow
+
+
+

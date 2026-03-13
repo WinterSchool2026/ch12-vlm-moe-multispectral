@@ -1,0 +1,18 @@
+{
+    // Python formatting settings
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter", // Specify Black as the default formatter for Python files
+        "editor.formatOnSave": true // Enable format on save for Python files
+    },
+    "black-formatter.args": [
+        "--line-length=88",
+        "--preview"
+    ],
+    // Python linting settings
+    "pylint.enabled": true, // Enable Pylint through its dedicated extension
+    "pylint.args": [
+        "--rcfile=${workspaceFolder}/.pylintrc"
+    ],
+    "editor.renderWhitespace": "all",
+    "python-envs.pythonProjects": []
+}

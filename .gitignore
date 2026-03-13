@@ -1,0 +1,19 @@
+__pycache__/
+output*log
+.DS_Store
+vlm_align.final_state_dict.pt
+cache
+.cache*
+nohup.out
+weights/
+# Weights / checkpoints
+weights/
+*.pt
+*.pth
+*.ckpt
+*.bin
+data/bigearthnet_val
+data/bigearthnet_test
+out_vlm_moe_*
+*.log
+out_*

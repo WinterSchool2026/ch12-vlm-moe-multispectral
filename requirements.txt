@@ -1,0 +1,15 @@
+numpy==2.2.4
+torch==2.7.0
+scikit-learn==1.6.1
+pandas==2.2.3
+rasterio==1.4.3
+pyproj==3.7.1
+torchvision==0.22.0
+tqdm==4.67.1
+matplotlib==3.10.1
+PyYAML==6.0.2
+joblib==1.4.2
+streamlit==1.54.0
+sentence-transformers==5.2.2
+open_clip_torch==3.2.0
+

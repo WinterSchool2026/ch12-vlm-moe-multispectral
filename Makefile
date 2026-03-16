@@ -24,7 +24,7 @@ BIGEARTHNET_TEST_URL := https://object-store.os-api.cci2.ecmwf.int/meditwin-trai
 HF_EUROSAT_L_REPO ?= isaaccorley/eurosat-l
 EUROSAT_L_DIR ?= $(DATA_DIR)/eurosat-l
 EUROSAT_L_ARCHIVE ?= $(EUROSAT_L_DIR)/eurosat-l.tar.gz
-EUROSAT_L_ZIP_SRC ?= /mnt/storage/vlm_eurosat_data/eurosat-l/eurosat-l.zip
+EUROSAT_L_ZIP_SRC ?= $(DATA_DIR)/eurosat-l/eurosat-l.zip
 # -------------------------------------------------------
 # Virtualenv creation
 # -------------------------------------------------------

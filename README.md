@@ -27,3 +27,7 @@ The goal is to demonstrate how conditional routing and weak language supervision
 - [https://arxiv.org/pdf/1701.06538](https://arxiv.org/pdf/1701.06538)
 - [https://arxiv.org/pdf/2509.10919](https://arxiv.org/pdf/2509.10919)
 - [https://arxiv.org/pdf/2103.00020](https://arxiv.org/pdf/2103.00020)
+
+## Contact
+
+For any questions, contact [@albughdadim](https://github.com/albughdadim).

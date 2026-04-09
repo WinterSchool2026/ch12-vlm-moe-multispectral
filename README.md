@@ -1,5 +1,16 @@
 # Lightweight Vision-Language Mixture-of-Experts for Interpretable Multispectral Satellite Representation Learning
 
+## Team
+
+- Thomas Hallopeau
+- Dimitra Karkani
+- Nelly Gaillard
+- Jordi Morales
+- Eleni Saka
+- Khizer Zakir
+
+**Tutor:** Mohanad Albughdadi
+
 ## Description
 
 Earth Observation imagery exhibits strong heterogeneity across land-cover classes, making it inefficient for a single compact model to represent all patterns equally well. Modern Earth Observation models increasingly rely on large opaque encoders to achieve strong performance. On the other hand, Mixture-of-Experts architectures promise computational efficiency and specialization. The conditional routing of these models enables different experts to specialize in distinct spectral-spatial regimes. However, their internal behavior remains poorly understood.
